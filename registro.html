@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="registro">Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" width="100" height="100">
+            <p class="eslogan">eslogan</p>
+        </div>
+        <h1 id="titulo">Registro</h1>
+        <article class="botones">
+            <button type="button"><img src="usuario">usuario</button>
+            <button type="button"><img src="carro">carrito</button>
+        </article>
+    </header>
+    <section class="conteiner">
+        <form action="/formulario" method="post">
+            <label for="nombre">nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="ingrese nombre">
+            <br>
+            <label for="apellido">apeliido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="ingrese apellido">
+            <br>
+            <label for="telefono">telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="numero telefonico">
+            <br>
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="email">
+            <br>
+            <label for="password">password</label> 
+            <input type="password" id="password" name="password" placeholder="contraseña">
+            <br>
+            <button type="submit">enviar</button>
+            <button type="reset">limpiar</button>
+        </form>
+    </section>
+    <footer>
+        <a href="#titulo">Ir al inicio</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0 auto;
+    background-color: #38383b;
+}
+
+header{
+    background-color: #364552;
+    color: white;
+    padding: 2rem 2rem;
+}
+#titulo{
+    text-align: center;  
+    color: #fff;
+    font-size: 3rem;
+}
+.logo{
+    float: left;
+}
+.botones{
+    float: right;;
+}
+.menu{
+    background-color: gray;
+    padding: 1rem;
+    color: antiquewhite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    justify-content: center;
+}
+.conteiner{
+    width: 400px;
+    margin: 0 auto;
+    background-color: #282a3d;
+    padding: 0.25rem;
+}
+.imagen{
+    text-align: center;
+}
+.descripcion{
+    display: block;
+}
+.precio{
+    color: #fff;
+}
+.post h2, .post p{
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.2rem;
+}
+
+section article:hover{
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+}
+footer{
+    background-color: #222 ;
+    padding: 3rem;
+    color: #fff;  
+}
+footer section{
+    padding: 1rem 2rem;
+    justify-content: right;
+}
+footer p{
+    margin: 0;
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
