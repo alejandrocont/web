@@ -11,33 +11,33 @@
           const baseDeDatos = [
               {
                   id: 1,
-                  nombre: 'Patata',
-                  precio: 1,
-                  imagen: 'patata.jpg'
+                  nombre: 'Ensalda Cesar',
+                  precio: 6990,
+                  imagen: 'img/referencial.jpg'
               },
               {
                   id: 2,
-                  nombre: 'Cebolla',
-                  precio: 1.2,
-                  imagen: 'cebolla.jpg'
+                  nombre: 'lomo saltado',
+                  precio: 8990,
+                  imagen: 'img/lomo-saltado.jpg'
               },
               {
                   id: 3,
-                  nombre: 'Calabacin',
-                  precio: 2.1,
-                  imagen: 'calabacin.jpg'
+                  nombre: 'Hamburguesa Clasica',
+                  precio: 17000,
+                  imagen: 'img/hamburguesa.png'
               },
               {
                   id: 4,
-                  nombre: 'Fresas',
-                  precio: 0.6,
-                  imagen: 'fresas.jpg'
+                  nombre: 'Pan de ajo',
+                  precio: 9500,
+                  imagen: 'img/onepage_restaurant.jpg'
               }
 
           ];
 
           let carrito = [];
-          const divisa = '€';
+          const divisa = '$';
           const DOMitems = document.querySelector('#items');
           const DOMcarrito = document.querySelector('#carrito');
           const DOMtotal = document.querySelector('#total');
@@ -67,7 +67,7 @@
                   // Precio
                   const miNodoPrecio = document.createElement('p');
                   miNodoPrecio.classList.add('card-text');
-                  miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                  miNodoPrecio.textContent = `${divisa}${info.precio}`;
                   // Boton 
                   const miNodoBoton = document.createElement('button');
                   miNodoBoton.classList.add('btn', 'btn-primary');
@@ -194,7 +194,7 @@
                 <ul id="carrito" class="list-group"></ul>
                 <hr>
                 <!-- Precio total -->
-                <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                <p class="text-right">Total: <span id="total"></span>&dollar;</p>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
             </aside>
         </div>
