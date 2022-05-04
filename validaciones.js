@@ -12,7 +12,45 @@ function openMenu(evt, menuName) {
     document.getElementById(menuName).style.display = "block";
     evt.currentTarget.firstElementChild.className += " w3-red";
   }
-  document.getElementById("myLink").click();
+  //validacion formulario 
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("id01").addEventListener('submit', validarFormulario); 
+  });
+  
+  function validarFormulario(evento) {
+    evento.preventDefault();//prevenir envio
+    var letra = document.getElementById('nombre').value.charAt(0);
+    var usuario = document.getElementById('nombre').value;
+    let msj = "";
+    let entrar = false
+    if(usuario.length == 0) {//validacion usuario
+      alert('No has escrito nada en el usuario');
+      return;
+    }
+    if(usuario.trim().length <4 || usuario.trim().length >7){
+      msj+="El nombre no tiene la longitud válida, 4-7 caracteres<br>";
+      entrar = true;
+    }
+    if (entrar){
+      $("mensajes").html(msj);
+    }
+    else{
+      $("mensajes").html("Formulario Enviado")
+    }
+    function esMayuscula(letra){
+      return letra == letra.toUpperCase();
+  }
+    
+    //validacion password 
+    var clave = document.getElementById('psw1').value;
+    var clave2 = document.getElementById('psw2').value;
+    if (4>clave.length>12) {
+      if(clave !== clave2)
+        alert('La clave no es valida');
+        return;
+    }
+    this.submit();
+  }
   
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB2fLqEcxJFE1bkTPKiXlKIj-6nBH8zts&callback=initMap"
   

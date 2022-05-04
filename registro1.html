@@ -119,19 +119,22 @@ hr {
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" action="/action_page.php" name="registro" method="post">
     <div class="container">
       <h1>Registro</h1>
       <p>Favor llenar las casillas con la informacion solicitada</p>
       <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Ingrese Email" name="email" required>
+      <label for="nombre"><b>Nombre de Usuario</b> </label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ingrese nombre de usuario" required>
+            
+      <label for="email"><b>Ingrese Email</b></label><hr>
+      <input type="email" id="email" class="form-control"  placeholder="Correo@dominio.com" name="email" required> <hr>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Ingrese Password" name="psw" required>
+      <input type="password" id="psw1" class="form-control" placeholder="Ingrese Password" name="psw" required>
 
       <label for="psw-repeat"><b>repita Password</b></label>
-      <input type="password" placeholder="Repita Password" name="psw-repeat" required>
+      <input type="password" id="psw2" class="form-control" placeholder="Repita Password" name="psw-repeat" required>
       
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
@@ -141,7 +144,7 @@ hr {
 
       <div class="clearfix">
         <button type="button"  href="#menu" class="cancelbtn">Cancelar</button>
-        <button type="submit" class="signupbtn">Registrarse</button>
+        <button type="submit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="submit">Registrarse</button>
       </div>
     </div>
   </form>
@@ -149,7 +152,29 @@ hr {
 
 <script>
 // Get the modal
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("id01").addEventListener('submit', validarFormulario); 
+});
+
+function validarFormulario(evento) {
+  evento.preventDefault();
+  var usuario = document.getElementById('nombre').value;
+  if(usuario.length == 0) {
+    alert('No has escrito nada en el usuario');
+    return;
+  }
+  var clave = document.getElementById('psw1').value;
+  var clave2 = document.getElementById('psw2').value
+  if (4>clave.length>12) {
+    if(clave !== clave2)
+      alert('La clave no es válida');
+      return;
+  }
+  this.submit();
+}
 var modal = document.getElementById('id01');
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
