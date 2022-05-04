@@ -1,37 +1,37 @@
-var nomb = document.getElementById("nom");
-var correo = document.getElementById("correo");
-var msj = document.getElementById("mensajes");
-
-const form = document.getElementById("form1");
-//Funciones de flecha e=>, que se hace de manera más sencilla y rápida, tiene el mismo uso de una función
-//normal
-form.addEventListener("submit", e=>{ 
-
-    e.preventDefault();
-    let mensajesAcotados ="";
-    let entrar = false;
-
-    if(nomb.value.length<4 || nomb.value.length>7){
-        mensajesAcotados +="El nombre no tiene la longitud válida <br>";
-        entrar = true;
-
+// Tabbed Menu
+function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
     }
-
-    var letra = nomb.value.charAt(0);
-    if(!esMayuscula(letra)){
-        mensajesAcotados+="La letra no es mayúscula <br>"
-        entrar = true; //Cada vez que ocurre un error entrar se vuelve true
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
     }
-
-    if (entrar){
-        msj.innerHTML = mensajesAcotados;
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
+  }
+  document.getElementById("myLink").click();
+  
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB2fLqEcxJFE1bkTPKiXlKIj-6nBH8zts&callback=initMap"
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(iniciarMapa);
+  }
+  function iniciarMapa(){
+    var latitud = navigator.geolocation.getCurrentPosition.latitud
+    var longitud = 70.6789547
+  
+    coordenadas = {
+      lng: longitud,
+      lat: latitud
     }
-    else{
-        msj.innerHTML = "Formulario Enviado";
-    }
-
-});
-
-function esMayuscula(letra){
-    return letra == letra.toUpperCase();
-}
+    generarMapa(coordenadas);
+  }
+  function generarMapa(coordenadas){
+    var mapa = new google.maps.Map(document.getElementById('Map'),{
+      zoom: 12,
+      center: new google.maps.latLng(coordenadas.lat, coordenadas.lng)
+    });
+  }
